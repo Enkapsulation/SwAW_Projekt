@@ -1,3 +1,0 @@
-/home/pi/Desktop/SwAW/CPP/CMakeFiles/rebuild_cache.dir
-/home/pi/Desktop/SwAW/CPP/CMakeFiles/Sensors.dir
-/home/pi/Desktop/SwAW/CPP/CMakeFiles/edit_cache.dir
