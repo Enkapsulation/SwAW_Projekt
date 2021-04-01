@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/Desktop/SwAW/CPP/src/SensorClass/SensorClass.cpp
+iostream
+-
+SensorClass.hpp
+/home/pi/Desktop/SwAW/CPP/src/SensorClass/SensorClass.hpp
+wiringPi.h
+-
+
+/home/pi/Desktop/SwAW/CPP/src/SensorClass/SensorClass.hpp
+iostream
+-
+string
+-
+

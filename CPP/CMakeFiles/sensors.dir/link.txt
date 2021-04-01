@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/sensors.dir/pir.cpp.o  -o sensors  -lwiringPi 
