@@ -16,7 +16,7 @@ int main()
 	PIR_sensor.Debug_PIR_Sensor(actual_state, iterator);
 	#endif /* _DEBUG_FLAG  */
 
-	PIR_sensor.Print_Actual_Sensor_State();
+	PIR_sensor.printInfo();
 
 	// PIR_sensor.Detect_Move(actual_state);
 }
