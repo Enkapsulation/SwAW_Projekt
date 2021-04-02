@@ -6,7 +6,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
 # specify the C++ standard
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Compile flags 
@@ -19,16 +19,21 @@ set(CMAKE_CXX_FLAGS " ")
 set(MAIN ${CMAKE_SOURCE_DIR}/src/pir.cpp)
 
 #SensorClass
-set(SENSOR_CLASS_DIR ${CMAKE_SOURCE_DIR}/src/SensorClass)
+set(SENSOR_CLASS_DIR ${CMAKE_SOURCE_DIR}/src/sensor_class)
 set(SENSOR_CLASS ${SENSOR_CLASS_DIR}/SensorClass.hpp ${SENSOR_CLASS_DIR}/SensorClass.cpp)
 
+#dbg_trace
+set(DBG_TRACE_DIR ${CMAKE_SOURCE_DIR}/src/dbg_trace)
+set(DEBUG_TRACE ${DBG_TRACE_DIR}/dbg_trace.hpp ${DBG_TRACE_DIR}/dbg_trace.cpp ${DBG_TRACE_DIR}/dbg_trace_types.hpp)
+
 # add the executable
-add_executable(${CMAKE_PROJECT_NAME} ${MAIN} ${SENSOR_CLASS})
+add_executable(${CMAKE_PROJECT_NAME} ${MAIN} ${SENSOR_CLASS} ${DEBUG_TRACE})
 
 # Static library
 target_link_libraries(${CMAKE_PROJECT_NAME} wiringPi)
 
 # Directories
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC 
-									"${CMAKE_SOURCE_DIR}/src/SensorClass"
+									"${SENSOR_CLASS_DIR}"
+									"${DBG_TRACE_DIR}"
 									)
