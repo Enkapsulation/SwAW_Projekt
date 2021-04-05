@@ -18,16 +18,20 @@ set(CMAKE_CXX_FLAGS " ")
 # main file
 set(MAIN ${CMAKE_SOURCE_DIR}/src/pir.cpp)
 
-#SensorClass
-set(SENSOR_CLASS_DIR ${CMAKE_SOURCE_DIR}/src/sensor_class)
-set(SENSOR_CLASS ${SENSOR_CLASS_DIR}/SensorClass.hpp ${SENSOR_CLASS_DIR}/SensorClass.cpp)
+#SensorInterface
+set(SENSOR_INTERFACE_DIR ${CMAKE_SOURCE_DIR}/sensor_interface)
+set(SENSOR_INTERFACE ${SENSOR_INTERFACE_DIR}/sensor_interface.hpp)
+
+#PIRClass
+set(PIR_CLASS_DIR ${CMAKE_SOURCE_DIR}/src/pir_class)
+set(PIR_CLASS ${PIR_CLASS_DIR}/PIRClass.hpp ${PIR_CLASS_DIR}/PIRClass.cpp)
 
 #dbg_trace
 set(DBG_TRACE_DIR ${CMAKE_SOURCE_DIR}/src/dbg_trace)
 set(DEBUG_TRACE ${DBG_TRACE_DIR}/dbg_trace.hpp ${DBG_TRACE_DIR}/dbg_trace.cpp ${DBG_TRACE_DIR}/dbg_trace_types.hpp)
 
 # add the executable
-add_executable(${CMAKE_PROJECT_NAME} ${MAIN} ${SENSOR_CLASS} ${DEBUG_TRACE})
+add_executable(${CMAKE_PROJECT_NAME} ${MAIN} ${SENSOR_INTERFACE} ${PIR_CLASS} ${DEBUG_TRACE})
 
 # Static library
 target_link_libraries(${CMAKE_PROJECT_NAME} wiringPi)
