@@ -1,3 +1,6 @@
 [submodule "rfid"]
 	path = rfid
 	url = https://github.com/Wneku1/sensors_mqtt.git
+[submodule "App"]
+	path = App
+	url = https://github.com/MJKubas/SmartHome.git
